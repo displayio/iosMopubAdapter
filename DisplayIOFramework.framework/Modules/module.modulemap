@@ -1,0 +1,11 @@
+framework module DisplayIOFramework {
+  umbrella header "DisplayIOFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module DisplayIOFramework.Swift {
+    header "DisplayIOFramework-Swift.h"
+    requires objc
+}
