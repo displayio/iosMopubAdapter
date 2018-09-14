@@ -26,9 +26,11 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
         
         let mopubConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: adUnitId)
         mopubConfig.globalMediationSettings = []
-        MoPub.sharedInstance().initializeSdk(with: mopubConfig, completion: nil)
-        
-        loadInterstitial()
+        MoPub.sharedInstance().initializeSdk(with: mopubConfig, completion: {
+            DispatchQueue.main.async {
+                self.loadInterstitial()
+            }
+        })
     }
     
     private func loadInterstitial() {
