@@ -18,14 +18,14 @@ class DioInterstitialAdapter: MPInterstitialCustomEvent {
     var placementId = ""
     var ctrl = DioController.sharedInstance
     
-    private func parseServerParameters(serverParameters: [AnyHashable : Any]!) {
+    private func parseServerParameters(customEventInfo: [AnyHashable : Any]!) {
         
-        if let checkedAppId = serverParameters[keyAppId] {
+        if let checkedAppId = customEventInfo[keyAppId] {
             appId = checkedAppId as! String
             print("Application id: \(appId)")
         }
         
-        if let checkedPlacementId = serverParameters[keyPlacementId] {
+        if let checkedPlacementId = customEventInfo[keyPlacementId] {
             placementId = checkedPlacementId as! String
             print("Placement id: \(placementId)")
         }
@@ -33,8 +33,10 @@ class DioInterstitialAdapter: MPInterstitialCustomEvent {
     
     override func requestInterstitial(withCustomEventInfo info: [AnyHashable : Any]!) {
         if let checkedInfo = info {
-            parseServerParameters(serverParameters: checkedInfo)
-        } else { return }
+            parseServerParameters(customEventInfo: checkedInfo)
+        } else {
+            print("DioInterstitialAdapter: no custom event info in request")
+        }
         
         ctrl.eventDelegate = self
         ctrl.isInitialized = false
