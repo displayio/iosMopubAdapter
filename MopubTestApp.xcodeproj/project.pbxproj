@@ -1364,7 +1364,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = akrat;
+				ORGANIZATIONNAME = Display.io;
 				TargetAttributes = {
 					348D2F1A214119B10017412B = {
 						CreatedOnToolsVersion = 9.4.1;

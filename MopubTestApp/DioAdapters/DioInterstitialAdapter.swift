@@ -3,7 +3,7 @@
 //  MopubAdapter
 //
 //  Created by akrat on 9/6/18.
-//  Copyright © 2018 akrat. All rights reserved.
+//  Copyright © 2018 Display.io. All rights reserved.
 //
 
 import Foundation
