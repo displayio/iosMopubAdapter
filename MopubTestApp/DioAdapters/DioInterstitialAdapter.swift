@@ -49,6 +49,9 @@ class DioInterstitialAdapter: MPInterstitialCustomEvent {
 }
 
 extension DioInterstitialAdapter: DioEventDelegate {
+    func onInitError(message: String) {
+    }
+    
     func onInit(placementIds: [String]) {
         if ctrl.placements[placementId] == nil {
             delegate.interstitialCustomEvent(self, didFailToLoadAdWithError: nil)
